@@ -1,0 +1,80 @@
+﻿@model Asp_Store.Models.Product
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h1 class="text-center">Product Details</h1>
+
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@Model.Name</h5>
+                <p class="card-text"><strong>Price:</strong> @Model.Price</p>
+                <p class="card-text"><strong>Description:</strong> @Model.Description</p>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <a asp-action="Edit" class="btn btn-warning w-100">
+                    <i class="bi bi-pencil"></i> Edit
+                </a>
+            </div>
+            <div class="col">
+                <a asp-action="Index" class="btn btn-info w-100">
+                    <i class="bi bi-arrow-left"></i> Back to List
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+            border-color: #d39e00;
+        }
+
+    .btn-info {
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+
+        .btn-info:hover {
+            background-color: #117a8b;
+            border-color: #10707f;
+        }
+
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .card-text {
+        margin-bottom: 1rem;
+    }
+</style>

@@ -1,0 +1,81 @@
+﻿@model Asp_Store.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center">Create Product</h1>
+
+<h4 class="text-center">Product</h4>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <button type="submit" class="btn btn-dark w-100">
+                    <i class="bi bi-plus-circle"></i> Create
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <a asp-action="Index" class="btn btn-info w-100">
+            <i class="bi bi-arrow-left"></i> Back to List
+        </a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    .btn-dark {
+        background-color: #343a40;
+        border-color: #343a40;
+    }
+
+        .btn-dark:hover {
+            background-color: #23272b;
+            border-color: #1d2124;
+        }
+
+    .btn-info {
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+
+        .btn-info:hover {
+            background-color: #117a8b;
+            border-color: #10707f;
+        }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+</style>
